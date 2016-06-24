@@ -1,0 +1,47 @@
+body {
+  margin: 0 auto;
+  width: 500px;
+  height: 360px;
+  border: 2px solid dodgerblue;
+  text-align: center;
+  padding-bottom: 10px; }
+
+input {
+  background: black;
+  text-align: right;
+  font-size: 40px;
+  color: white;
+  width: 96%;
+  height: 16%; }
+
+button {
+  background: orange;
+  width: 11.5%;
+  height: 16%;
+  font-size: 22px; }
+  button:focus {
+    outline: none; }
+
+.clear, .zero, .pi {
+  width: 23.5%; }
+
+.num {
+  background: lightgray; }
+
+.op:focus {
+  background: #cc7a00; }
+
+@media (max-width: 500px) {
+  body {
+    width: 100%; }
+
+  .sci {
+    display: none; }
+
+  button {
+    width: 23%; }
+
+  .clear, .zero {
+    width: 47.5%; } }
+
+/*# sourceMappingURL=styles.css.map */
