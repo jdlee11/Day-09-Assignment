@@ -18,16 +18,24 @@ var clear = document.querySelector(".clear");
 clear.addEventListener("click", clearDisplay);
 
 var plus = document.querySelector(".add");
-plus.addEventListener("click", setToAdd);
+plus.addEventListener("click", function(event){
+  setOp(event.target);
+});
 
 var sub = document.querySelector(".sub");
-sub.addEventListener("click", setToSub);
+sub.addEventListener("click", function(event){
+  setOp(event.target);
+});
 
 var mul = document.querySelector(".mul");
-mul.addEventListener("click", setToMul);
+mul.addEventListener("click", function(event){
+  setOp(event.target);
+});
 
 var dvd = document.querySelector(".dvd");
-dvd.addEventListener("click", setToDiv);
+dvd.addEventListener("click", function(event){
+  setOp(event.target);
+});
 
 var neg = document.querySelector(".negative");
 neg.addEventListener("click", posNeg);
@@ -114,34 +122,10 @@ function clearDisplay(){
   display.value = previousValue;
 }
 
-// sets current operator to +
-function setToAdd(){
+// sets current operator
+function setOp(button){
   calculate();
-  currentOp = "+";
-  previousValue = display.value;
-  currentValue = "";
-}
-
-// sets current operator to -
-function setToSub(){
-  calculate();
-  currentOp = "-";
-  previousValue = display.value;
-  currentValue = "";
-}
-
-// sets current operator to *
-function setToMul(){
-  calculate();
-  currentOp = "*";
-  previousValue = display.value;
-  currentValue = "";
-}
-
-// sets current operator to -
-function setToDiv(){
-  calculate();
-  currentOp = "/";
+  currentOp = button.innerText;
   previousValue = display.value;
   currentValue = "";
 }
@@ -161,7 +145,7 @@ function calculate(){
   } else if (currentOp === "-"){
     previousValue = Number(previousValue) - Number(currentValue);
     display.value = previousValue;
-  } else if (currentOp === "*"){
+  } else if (currentOp === "x"){
     previousValue = Number(previousValue) * Number(currentValue);
     display.value = previousValue;
   } else if (currentOp === "/"){
